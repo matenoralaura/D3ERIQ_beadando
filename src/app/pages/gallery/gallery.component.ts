@@ -8,8 +8,6 @@ import { GalleryObject } from 'src/app/shared/constants/constants';
 })
 export class GalleryComponent implements OnInit {
 
-  galleryObject: any = GalleryObject;
-
   constructor() { }
 
   ngOnInit(): void {

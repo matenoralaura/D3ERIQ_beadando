@@ -11,6 +11,8 @@ import { RegComponent } from './pages/reg/reg.component';
 import { LoginComponent } from './pages/login/login.component';
 import { AboutComponent } from './pages/about/about.component';
 import { ProductsComponent } from './pages/products/products.component';
+import { FormsModule } from '@angular/forms';
+import { CustomPipe } from './shared/pipes/custom.pipe';
 
 @NgModule({
   declarations: [
@@ -22,11 +24,13 @@ import { ProductsComponent } from './pages/products/products.component';
     RegComponent,
     LoginComponent,
     AboutComponent,
-    ProductsComponent
+    ProductsComponent,
+    CustomPipe
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

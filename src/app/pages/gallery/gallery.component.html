@@ -1,5 +1,5 @@
-<div>
-    <select #chosenImage (change)="reload()">
+<div class="kepek">
+    <!--<select #chosenImage (change)="reload()">
         <option value="galeria1.jpg">1</option>
         <option value="galeria2.jpg">2</option>
         <option value="galeria3.jpg">3</option>
@@ -12,5 +12,18 @@
     <div class="container">
         <img class="galleryImage" [src]="'./src/gallery_pics/' + chosenImage.value"/>
     </div>
-
+-->
+ <table class="kepek">
+    <tr>
+        <td><img src="assets/gallery_pics/galeria1.jpg"/></td>
+        <td><img src="assets/gallery_pics/galeria2.jpg"/></td>
+        <td><img src="assets/gallery_pics/galeria3.jpg"/></td>
+    </tr>
+    <tr>
+        <td><img src="assets/gallery_pics/galeria4.jpg"/></td>
+        <td><img src="assets/gallery_pics/galeria5.jpg"/></td>
+        <td><img src="assets/gallery_pics/galeria6.jpg"/></td>
+    </tr>
+ </table>
+    
 </div>

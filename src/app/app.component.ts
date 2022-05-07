@@ -7,5 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'beadando-dekor';
-  page = 'gallery';
+  page = 'main';
+
+  changePage(selectedPage: string){
+    this.page = selectedPage;
+  }
 }

@@ -1,0 +1,15 @@
+.break {
+    flex-basis: 100%;
+    height: 0;
+}
+table, td{
+    border: 1px solid white;
+}
+
+.table-header-even{
+    background-color: beige;
+}
+
+.table-header-odd{
+    background-color: bisque;
+}

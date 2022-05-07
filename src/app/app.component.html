@@ -1,9 +1,36 @@
-<app-menu></app-menu>
-<div class="maincomp" *ngIf="page==='main'">
-    <app-main></app-main>
-</div>
-<app-contact *ngIf="page==='contact'"> </app-contact>
-<app-gallery *ngIf="page==='gallery'"> </app-gallery>
+<app-menu (selectedPage)="changePage($event)"></app-menu>
+<ng-container [ngSwitch]="page">
+    <ng-container *ngSwitchCase="'main'">
+        <div class="maincomp">
+            <app-main></app-main>
+        </div>
+    </ng-container>
+
+
+    <ng-container *ngSwitchCase="'contact'">
+        <app-contact > </app-contact>
+    </ng-container>
+
+    <ng-container *ngSwitchCase="'gallery'">
+        <app-gallery > </app-gallery>
+    </ng-container>
+
+    <ng-container *ngSwitchCase="'login'">
+        <app-login > </app-login>
+    </ng-container>
+
+    <ng-container *ngSwitchCase="'reg'">
+        <app-reg > </app-reg>
+    </ng-container>
+
+    <ng-container *ngSwitchCase="'about'">
+        <app-about > </app-about>
+    </ng-container>
+
+    <ng-container *ngSwitchDefault>
+        <h1>NOT FOUND</h1>
+    </ng-container>
+</ng-container>
 
 
 <!-- <router-outlet></router-outlet> -->

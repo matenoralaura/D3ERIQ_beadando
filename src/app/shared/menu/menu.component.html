@@ -1,6 +1,8 @@
-<ul>
-    <li><a href="default.asp">Home</a></li>
-    <li><a href="news.asp">News</a></li>
-    <li><a href="contact.asp">Contact</a></li>
-    <li><a href="about.asp">About</a></li>
-  </ul>
+<select #pageValue (change)="menuSwitch(pageValue.value)">
+  <option value="main">Fooldal</option>
+  <option value="about">Rolunk</option>
+  <option value="gallery">Galeria</option>
+  <option value="contact">Kapcsolat</option>
+  <option value="login">Bejelentkezes</option>
+  <option value="reg">Regisztracio</option>
+</select>
