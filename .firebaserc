@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "d3eriq": {
+      "hosting": {
+        "beadando-dekor": [
+          "d3eriq"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "d3eriq"
+  }
+}

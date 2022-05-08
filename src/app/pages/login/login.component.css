@@ -1,0 +1,21 @@
+div {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    text-align: left;
+    height: 100%;
+}
+
+span {
+    padding: 5px 5px 5px 5px;
+}
+
+
+mat-form-field {
+    width: 30%;
+}
+
+.main_component {
+    height: 100vh;
+    align-items: left;
+}

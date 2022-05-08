@@ -1,4 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { FormBuilder, Validators } from '@angular/forms';
+import { Comment } from '../../shared/models/Comment';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-contact',
@@ -7,17 +10,34 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class ContactComponent implements OnInit {
 
-  commentObject: any = {};
-  comments: Array<any> = [];
+  //commentObject: any = {};
+  comments: Array<Comment> = [];
 
-  constructor() { }
+  kerdesekForm = this.createForm({
+    veznev:'',
+    kernev:'',
+    kerdes: ''
+  })
+
+  constructor(private fb: FormBuilder, private router: Router) { }
 
   ngOnInit(): void {
   }
 
+  createForm(model: Comment) {
+    let formGroup = this.fb.group(model);
+    formGroup.get('veznev')?.addValidators([Validators.required])
+    formGroup.get('kernev')?.addValidators([Validators.required])
+    formGroup.get('kerdes')?.addValidators([Validators.required, Validators.minLength(15)])
+    return formGroup;
+  }
+
   addComment(){
-    if (this.commentObject.vezname && this.commentObject.kername && this.commentObject.comment){
-      this.comments.push({...this.commentObject});
+    if (this.kerdesekForm.valid){
+      if (this.kerdesekForm.get("veznev") && this.kerdesekForm.get("kernev") && this.kerdesekForm.get("kerdes")){
+        this.comments.push({...this.kerdesekForm.value});
+        //this.router.navigateByUrl('/main')
+      }
     }
   }
 

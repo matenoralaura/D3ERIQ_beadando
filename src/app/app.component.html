@@ -1,36 +1,26 @@
-<app-menu (selectedPage)="changePage($event)"></app-menu>
-<ng-container [ngSwitch]="page">
-    <ng-container *ngSwitchCase="'main'">
-        <div class="maincomp">
-            <app-main></app-main>
-        </div>
-    </ng-container>
-
-
-    <ng-container *ngSwitchCase="'contact'">
-        <app-contact > </app-contact>
-    </ng-container>
-
-    <ng-container *ngSwitchCase="'gallery'">
-        <app-gallery > </app-gallery>
-    </ng-container>
-
-    <ng-container *ngSwitchCase="'login'">
-        <app-login > </app-login>
-    </ng-container>
-
-    <ng-container *ngSwitchCase="'reg'">
-        <app-reg > </app-reg>
-    </ng-container>
-
-    <ng-container *ngSwitchCase="'about'">
-        <app-about > </app-about>
-    </ng-container>
-
-    <ng-container *ngSwitchDefault>
-        <h1>NOT FOUND</h1>
-    </ng-container>
-</ng-container>
-
-
-<!-- <router-outlet></router-outlet> -->
+<mat-sidenav-container>
+    <mat-sidenav #sidenav>
+        <app-menu (selectedPage)="changePage($event)" [currentPage]="page" *ngIf="page" (onCloseSidenav)="onClose($event, sidenav)"></app-menu>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <mat-toolbar color="accent">
+            <div fxHide.gt-xs>
+                <button mat-icon-button (click)="onToggleSidenav(sidenav)">
+                    <mat-icon>more_vert</mat-icon>
+                </button>
+            </div>
+            <div>Home Decor</div>
+            <div fxFlex fxLayout fxLayoutAlign="flex-end" fxHide.xs>
+                <ul fxLayout fxLayoutGap="15px" class="navigation-items">
+                    <li><a routerLink="/main">Főoldal</a></li>
+                    <li><a routerLink="/gallery">Galéria</a></li>
+                    <li><a routerLink="/products">Termékek</a></li>
+                    <li><a routerLink="/contact">Kapcsolat</a></li>
+                    <li><a routerLink="/login">Bejelentkezés</a></li>
+                    <li><a routerLink="/reg">Regisztráció</a></li>
+                </ul>
+            </div>
+        </mat-toolbar>
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
+</mat-sidenav-container>
