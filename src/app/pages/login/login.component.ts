@@ -3,6 +3,8 @@ import { FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Observable, Subscription } from 'rxjs';
 import { FakeLoadingService } from '../../shared/services/fake-loading.service';
+import { AuthService } from '../../shared/services/auth.service';
+
 
 @Component({
   selector: 'app-login',
@@ -19,7 +21,7 @@ export class LoginComponent implements OnInit, OnDestroy {
 
   loading: boolean = false;
 
-  constructor(private router: Router, private loadingService: FakeLoadingService) { }
+  constructor(private router: Router, private loadingService: FakeLoadingService,) { }
 
   ngOnInit(): void {
   }
